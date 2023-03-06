@@ -1,6 +1,18 @@
 <app-header></app-header>
 <div>
-  <a class="button" routerLink="/detail-view">details</a>
-  <a class="button" routerLink="/bottle-view">bottles</a>
+  <a
+    class="button"
+    routerLink="/detail-view"
+    routerLinkActive="activebutton"
+    ariaCurrentWhenActive="page"
+    >details</a
+  >
+  <a
+    class="button"
+    routerLink="/bottle-view"
+    routerLinkActive="activebutton"
+    ariaCurrentWhenActive="page"
+    >bottles</a
+  >
 </div>
 <router-outlet></router-outlet>

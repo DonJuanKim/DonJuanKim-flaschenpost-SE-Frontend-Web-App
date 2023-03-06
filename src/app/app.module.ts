@@ -26,6 +26,7 @@ import { CartComponent } from './cart/cart.component';
       { path: 'detail-view', component: DetailViewComponent },
       { path: 'bottle-view', component: BottleViewComponent },
       { path: 'cart', component: CartComponent },
+      { path: '', redirectTo: 'detail-view', pathMatch: 'full' },
     ]),
   ],
   providers: [],

@@ -1,13 +1,18 @@
+// Modules
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+
+// Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { DetailViewComponent } from './detail-view/detail-view.component';
 import { BottleViewComponent } from './bottle-view/bottle-view.component';
 import { CartComponent } from './cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
+
+// Services
+import { GetServiceService } from './service/get-service.service';
 
 @NgModule({
   declarations: [
@@ -17,8 +22,8 @@ import { CartComponent } from './cart/cart.component';
     DetailViewComponent,
     CartComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  providers: [GetServiceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

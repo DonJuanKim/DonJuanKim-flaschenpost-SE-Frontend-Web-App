@@ -7,7 +7,7 @@ import { GetServiceService } from '../service/get-service.service';
   styleUrls: ['./detail-view.component.css'],
 })
 export class DetailViewComponent {
-  data: any;
+  bottles: any;
   constructor(private getService: GetServiceService) {}
 
   ngOnInIt() {
@@ -17,7 +17,7 @@ export class DetailViewComponent {
   fetchBottles() {
     this.getService.getData().subscribe((res) => {
       console.log(res);
-      this.data = res;
+      this.bottles = res;
     });
   }
 }

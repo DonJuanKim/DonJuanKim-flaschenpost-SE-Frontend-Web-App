@@ -2,9 +2,16 @@
 <button (click)="sortByPrice()">
   Sort by Price : {{ ascendingOrder ? 'asc' : 'desc' }}
 </button>
+<button (click)="filterExpensiveBeers()">
+  filter Expensive Beers :
+  {{ filtered ? 'click to turn off' : 'click to turn on' }}
+</button>
 
 <div [ngClass]="'container'">
-  <div [ngClass]="'bottle-detail-card'" *ngFor="let bottle of bottles">
+  <div
+    [ngClass]="'bottle-detail-card'"
+    *ngFor="let bottle of filtered ? filteredBottles : bottles"
+  >
     <img [ngClass]="'bottle-img'" src="{{ bottle.articles[0].image }}" alt="" />
     <p [ngClass]="'bottle-name'">{{ bottle.name }}</p>
     <p [ngClass]="'bottle-price'">{{ bottle.articles[0].price }}</p>

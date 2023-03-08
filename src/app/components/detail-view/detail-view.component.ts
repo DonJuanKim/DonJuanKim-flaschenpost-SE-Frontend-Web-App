@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppComponent } from '../../app.component';
+import { FilterServiceService } from 'src/app/service/filter-service/filter-service.service';
 
 @Component({
   selector: 'app-detail-view',
@@ -9,19 +10,37 @@ import { AppComponent } from '../../app.component';
 export class DetailViewComponent {
   bottles: any;
   ascendingOrder: boolean = true;
+  filteredBottles: any;
+  filtered = false;
 
-  constructor(private appComponent: AppComponent) {
+  constructor(
+    private appComponent: AppComponent,
+    private filterService: FilterServiceService
+  ) {
     this.bottles = this.appComponent.getBottles();
   }
 
   sortByPrice(): void {
-    this.bottles.sort((a: any, b: any) => {
-      if (this.ascendingOrder) {
-        return a.articles[0].price - b.articles[0].price;
-      } else {
-        return b.articles[0].price - a.articles[0].price;
-      }
-    });
+    // This if-else statement enables "sortByPrice" to sort "filteredBottles" by price
+    if (this.filtered) {
+      this.filteredBottles = this.filterService.sortByPrice(
+        this.filteredBottles,
+        this.ascendingOrder
+      );
+    } else {
+      this.bottles = this.filterService.sortByPrice(
+        this.bottles,
+        this.ascendingOrder
+      );
+    }
     this.ascendingOrder = !this.ascendingOrder;
+  }
+
+  filterExpensiveBeers(): void {
+    this.filteredBottles = this.filterService.filterExpensiveBeers(
+      this.bottles
+    );
+    console.log(this.filteredBottles);
+    this.filtered = !this.filtered;
   }
 }

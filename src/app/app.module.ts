@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Components
 import { AppComponent } from './app.component';
@@ -13,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Services
 import { GetServiceService } from './service//get-service/get-service.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FilterServiceService } from './service/filter-service/filter-service.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CartComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, NgbModule],
-  providers: [GetServiceService],
+  providers: [GetServiceService, FilterServiceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

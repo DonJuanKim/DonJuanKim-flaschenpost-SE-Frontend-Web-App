@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetServiceService } from './service/get-service.service';
+import { GetServiceService } from './service//get-service/get-service.service';
 
 @Component({
   selector: 'app-root',

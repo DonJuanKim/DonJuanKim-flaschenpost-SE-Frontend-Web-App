@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DetailViewComponent } from './detail-view/detail-view.component';
-import { BottleViewComponent } from './bottle-view/bottle-view.component';
-import { CartComponent } from './cart/cart.component';
+import { DetailViewComponent } from './components/detail-view/detail-view.component';
+import { BottleViewComponent } from './components/bottle-view/bottle-view.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   { path: 'detail-view', component: DetailViewComponent },

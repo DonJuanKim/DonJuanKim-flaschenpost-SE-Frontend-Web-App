@@ -5,14 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Components
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { DetailViewComponent } from './detail-view/detail-view.component';
-import { BottleViewComponent } from './bottle-view/bottle-view.component';
-import { CartComponent } from './cart/cart.component';
+import { HeaderComponent } from './components/header/header.component';
+import { DetailViewComponent } from './components/detail-view/detail-view.component';
+import { BottleViewComponent } from './components/bottle-view/bottle-view.component';
+import { CartComponent } from './components/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 
 // Services
-import { GetServiceService } from './service/get-service.service';
+import { GetServiceService } from './service//get-service/get-service.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({

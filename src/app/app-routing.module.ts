@@ -2,12 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetailViewComponent } from './components/detail-view/detail-view.component';
 import { BottleViewComponent } from './components/bottle-view/bottle-view.component';
-import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   { path: 'detail-view', component: DetailViewComponent },
   { path: 'bottle-view', component: BottleViewComponent },
-  { path: 'cart', component: CartComponent },
   { path: '', redirectTo: 'detail-view', pathMatch: 'full' },
 ];
 

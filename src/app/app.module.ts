@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DetailViewComponent } from './components/detail-view/detail-view.component';
 import { BottleViewComponent } from './components/bottle-view/bottle-view.component';
-import { CartComponent } from './components/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 
 // Services
@@ -22,7 +21,6 @@ import { FilterServiceService } from './service/filter-service/filter-service.se
     HeaderComponent,
     BottleViewComponent,
     DetailViewComponent,
-    CartComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, NgbModule],
   providers: [GetServiceService, FilterServiceService],

@@ -3,7 +3,8 @@ header {
   padding: 0;
 }
 
-a {
+a,
+P {
   color: #fff;
 }
 
@@ -30,7 +31,7 @@ nav ul {
   margin: 0;
 }
 
-nav ul li a {
-  padding: 1em;
+nav ul li p {
+  /* padding: 1em; */
   display: inline-block;
 }

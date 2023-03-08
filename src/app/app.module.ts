@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Services
 import { GetServiceService } from './service/get-service.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { GetServiceService } from './service/get-service.service';
     DetailViewComponent,
     CartComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, NgbModule],
   providers: [GetServiceService],
   bootstrap: [AppComponent],
 })

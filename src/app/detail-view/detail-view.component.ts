@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GetServiceService } from '../service/get-service.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-detail-view',
@@ -8,16 +8,8 @@ import { GetServiceService } from '../service/get-service.service';
 })
 export class DetailViewComponent {
   bottles: any;
-  constructor(private getService: GetServiceService) {}
 
-  ngOnInIt() {
-    this.fetchBottles;
-  }
-
-  fetchBottles() {
-    this.getService.getData().subscribe((res) => {
-      console.log(res);
-      this.bottles = res;
-    });
+  constructor(private appComponent: AppComponent) {
+    this.bottles = this.appComponent.getBottles();
   }
 }

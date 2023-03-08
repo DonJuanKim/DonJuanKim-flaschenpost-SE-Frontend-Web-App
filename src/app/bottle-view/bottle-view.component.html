@@ -1,1 +1,6 @@
 <p>bottle-view works!</p>
+<div [ngClass]="'container'">
+  <div [ngClass]="'bottle-card'" *ngFor="let bottle of bottles">
+    <img [ngClass]="'bottle-img'" src="{{ bottle.articles[0].image }}" alt="" />
+  </div>
+</div>

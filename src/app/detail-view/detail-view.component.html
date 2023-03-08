@@ -1,4 +1,8 @@
 <p>detail-view works!</p>
+<button (click)="sortByPrice()">
+  Sort by Price : {{ ascendingOrder ? 'asc' : 'desc' }}
+</button>
+
 <div [ngClass]="'container'">
   <div [ngClass]="'bottle-detail-card'" *ngFor="let bottle of bottles">
     <img [ngClass]="'bottle-img'" src="{{ bottle.articles[0].image }}" alt="" />

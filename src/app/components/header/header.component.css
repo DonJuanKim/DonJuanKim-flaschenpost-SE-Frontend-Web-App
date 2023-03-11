@@ -1,0 +1,9 @@
+.toolbar-first-row {
+  z-index: 1;
+  box-shadow: 2px 2px 2px 1px rgb(0, 0, 0);
+}
+
+.toolbar-second-row {
+  background-color: #343434;
+  justify-content: center;
+}

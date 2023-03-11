@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { ProductData } from 'src/app/ProductData';
 
 @Injectable({
   providedIn: 'root',
@@ -7,9 +9,16 @@ import { HttpClient } from '@angular/common/http';
 export class GetServiceService {
   constructor(private http: HttpClient) {}
 
-  getData() {
-    return this.http.get(
-      'https://flapotest.blob.core.windows.net/test/ProductData.json'
-    );
+  getData(): Observable<ProductData[]> {
+    return this.http
+      .get<ProductData[]>(
+        'https://flapotest.blob.core.windows.net/test/ProductData.json'
+      )
+      .pipe();
   }
+  // getData() {
+  //   return this.http.get(
+  //     'https://flapotest.blob.core.windows.net/test/ProductData.json'
+  //   );
+  // }
 }

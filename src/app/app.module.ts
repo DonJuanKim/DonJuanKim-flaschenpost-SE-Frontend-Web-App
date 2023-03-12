@@ -11,14 +11,14 @@ import { FilterServiceService } from './service/filter-service/filter-service.se
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Pages
-import { ProductPageComponent } from './product-page/product-page.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { ProductBeerPageComponent } from './pages/product-beer-page/product-beer-page.component';
 
 // Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DetailViewComponent } from './components/detail-view/detail-view.component';
 import { BottleViewComponent } from './components/bottle-view/bottle-view.component';
-import { ToggleFilterSidebarComponent } from './components/toggle-filter-sidebar/toggle-filter-sidebar.component';
 
 // Material style
 import { LayoutModule } from '@angular/cdk/layout';
@@ -37,7 +37,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     BottleViewComponent,
     DetailViewComponent,
     ProductPageComponent,
-    ToggleFilterSidebarComponent,
+    ProductBeerPageComponent,
   ],
   imports: [
     BrowserModule,

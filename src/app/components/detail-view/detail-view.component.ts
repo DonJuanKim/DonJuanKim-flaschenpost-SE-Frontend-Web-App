@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { ProductData } from 'src/app/Interfaces';
 
 @Component({
   selector: 'app-detail-view',
@@ -6,9 +7,9 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./detail-view.component.css'],
 })
 export class DetailViewComponent implements OnInit, OnDestroy {
-  @Input() bottles: any;
+  @Input() bottles: ProductData[] | undefined;
   constructor() {}
-  
+
   // lifecycle hooks
 
   ngOnInit() {}

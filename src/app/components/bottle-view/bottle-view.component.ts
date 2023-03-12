@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { ProductData } from 'src/app/Interfaces';
 
 @Component({
   selector: 'app-bottle-view',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./bottle-view.component.css'],
 })
 export class BottleViewComponent implements OnInit, OnDestroy {
-  @Input() bottles: any;
+  @Input() bottles: ProductData[] | undefined;
 
   constructor() {}
 

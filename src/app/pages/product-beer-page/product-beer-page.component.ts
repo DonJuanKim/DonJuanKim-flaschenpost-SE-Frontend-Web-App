@@ -1,26 +1,27 @@
 import { Component, Input } from '@angular/core';
-import { ProductData } from 'src/app/ProductData';
+import { ProductData } from 'src/app/Interfaces';
 import { FilterServiceService } from 'src/app/service/filter-service/filter-service.service';
 
 @Component({
-  selector: 'app-toggle-filter-sidebar',
-  templateUrl: './toggle-filter-sidebar.component.html',
-  styleUrls: ['./toggle-filter-sidebar.component.css'],
+  selector: 'app-product-beer-page',
+  templateUrl: './product-beer-page.component.html',
+  styleUrls: ['./product-beer-page.component.css'],
 })
-export class ToggleFilterSidebarComponent {
+export class ProductBeerPageComponent {
   filteredBottles: ProductData[] = [];
   filtered: boolean = false;
 
-
   constructor(private filterService: FilterServiceService) {}
-
-  @Input() bottles: any;
 
   views = [
     { name: 'Details View', url: '/detail-view' },
     { name: 'Bottle View', url: '/bottle-view' },
   ];
   activeView = this.views[0];
+
+  @Input()
+  bottles: ProductData[] = [];
+
   // class methods
 
   sortByPrice(order: boolean): void {
@@ -31,12 +32,8 @@ export class ToggleFilterSidebarComponent {
         order
       );
     } else {
-      this.bottles = this.filterService.sortByPrice(
-        this.bottles,
-        order
-      );
+      this.bottles = this.filterService.sortByPrice(this.bottles, order);
     }
-    // this.ascendingOrder = !this.ascendingOrder;
   }
 
   filterExpensiveBeers(): void {

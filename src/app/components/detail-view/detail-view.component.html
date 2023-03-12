@@ -1,43 +1,9 @@
-<!-- <button (click)="sortByPrice()">
-  Sort by Price : {{ ascendingOrder ? 'asc' : 'desc' }}
-</button>
-<button (click)="filterExpensiveBeers()">
-  filter Expensive Beers :
-  {{ filtered ? 'click to turn off' : 'click to turn on' }}
-</button> -->
-
-<!-- // filter sidenav  -->
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <div class="button-wrap">
-      <span> Sort by Price</span>
-      <button (click)="sortByPrice()">
-        {{ ascendingOrder ? 'asc' : 'desc' }}
-      </button>
-    </div>
-    <div class="button-wrap">
-      <span> filter Expensive Beers</span>
-      <button (click)="filterExpensiveBeers()">
-        {{ filtered ? 'off' : 'on' }}
-      </button>
-    </div>
-  </mat-drawer>
-
-  <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
-  </div>
-</mat-drawer-container>
-<!-- // filter sidenav  -->
 <div class="container">
   <span class="bottle-count">
-    {{ filtered ? filteredBottles.length : bottles.length }} items found.
+    {{ bottles ? bottles.length : null
+    }} items found.
   </span>
-  <mat-card
-    class="bottle-detail-card"
-    *ngFor="let bottle of filtered ? filteredBottles : bottles"
-  >
+  <mat-card class="bottle-detail-card" *ngFor="let bottle of bottles">
     <mat-card-header>
       <mat-card-title-group>
         <mat-card-title class="bottle-name">{{ bottle.name }}</mat-card-title>

@@ -1,7 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { GetServiceService } from '../../service/get-service/get-service.service';
-import { FilterServiceService } from 'src/app/service/filter-service/filter-service.service';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-bottle-view',
@@ -9,53 +6,15 @@ import { FilterServiceService } from 'src/app/service/filter-service/filter-serv
   styleUrls: ['./bottle-view.component.css'],
 })
 export class BottleViewComponent implements OnInit, OnDestroy {
-  subscription: Subscription = new Subscription();
-  bottles: any;
-  filteredBottles: any;
-  filtered: boolean = false;
-  ascendingOrder: boolean = true;
+  @Input() bottles: any;
 
-  constructor(
-    private getService: GetServiceService,
-    private filterService: FilterServiceService
-  ) {}
+  constructor() {}
 
   // lifecycle hooks
 
-  ngOnInit() {
-    var observable = this.getService.getData();
-    this.subscription = observable.subscribe((response: any) => {
-      this.bottles = response;
-    });
-  }
+  ngOnInit() {}
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 
   // class methods
-
-  sortByPrice(): void {
-    // This if-else statement enables "sortByPrice" to sort "filteredBottles" by price
-    if (this.filtered) {
-      this.filteredBottles = this.filterService.sortByPrice(
-        this.filteredBottles,
-        this.ascendingOrder
-      );
-    } else {
-      this.bottles = this.filterService.sortByPrice(
-        this.bottles,
-        this.ascendingOrder
-      );
-    }
-    this.ascendingOrder = !this.ascendingOrder;
-  }
-
-  filterExpensiveBeers(): void {
-    this.filteredBottles = this.filterService.filterExpensiveBeers(
-      this.bottles
-    );
-    console.log(this.filteredBottles);
-    this.filtered = !this.filtered;
-  }
 }

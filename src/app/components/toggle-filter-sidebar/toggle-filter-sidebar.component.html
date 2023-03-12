@@ -1,0 +1,61 @@
+<!-- Tool bar -->
+<mat-toolbar>
+  <mat-toolbar-row class="toolbar-first-row">
+    <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+      <a
+        mat-tab-link
+        *ngFor="let view of views"
+        (click)="activeView = view"
+        [active]="activeView == view"
+      >
+        {{ view.name }}
+      </a>
+    </nav>
+    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- Filter bar -->
+
+<mat-drawer-container class="sidebar-container" autosize>
+  <mat-drawer #drawer class="sidebar" mode="side">
+    <div class="buttons-container">
+      <div class="button-wrap">
+        <span> Sort by Price</span>
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle color="primary" (click)="sortByPrice(true)"
+            >Ascending</mat-button-toggle
+          >
+          <mat-button-toggle (click)="sortByPrice(false)"
+            >descending</mat-button-toggle
+          >
+        </mat-button-toggle-group>
+      </div>
+      <div class="button-wrap">
+        <span> filter Expensive Beers</span>
+        <mat-chip-listbox aria-label="Fish selection">
+          <mat-chip-option (click)="filterExpensiveBeers()">
+            {{ filtered ? 'ON' : 'OFF' }}
+          </mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+    </div>
+  </mat-drawer>
+  <div class="filter-toggle-button">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Filter Button
+    </button>
+  </div>
+</mat-drawer-container>
+
+<!-- Views -->
+<ng-container *ngIf="activeView.name === 'Details View'">
+  <app-detail-view
+    [bottles]="filtered ? filteredBottles : bottles"
+  ></app-detail-view>
+</ng-container>
+<ng-container *ngIf="activeView.name === 'Bottle View'">
+  <app-bottle-view
+    [bottles]="filtered ? filteredBottles : bottles"
+  ></app-bottle-view>
+</ng-container>

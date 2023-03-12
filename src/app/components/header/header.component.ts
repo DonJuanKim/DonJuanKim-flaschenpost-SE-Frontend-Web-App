@@ -6,15 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  links = [
-    { name: 'Details View', url: '/detail-view' },
-    { name: 'Bottle View', url: '/bottle-view' },
-  ];
-  activeLink = this.links[0];
-
-  handleActiveLink() {
-    this.activeLink == this.links[0]
-      ? (this.activeLink = this.links[1])
-      : (this.activeLink = this.links[0]);
-  }
+  // links = [
+  //   { name: 'Details View', url: '/detail-view' },
+  //   { name: 'Bottle View', url: '/bottle-view' },
+  // ];
+  // activeLink = this.links[0];
+  // handleActiveLink() {
+  //   this.activeLink == this.links[0]
+  //     ? (this.activeLink = this.links[1])
+  //     : (this.activeLink = this.links[0]);
+  // }
 }

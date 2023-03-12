@@ -9,9 +9,11 @@
 }
 
 .bottle-detail-card {
+  background-color: rgb(80, 80, 80);
   width: 400px;
   height: 240px;
   box-shadow: 1px 8px 9px 2px rgb(0, 0, 0);
+  border-radius: 10px;
   display: flex;
   justify-content: center;
 }
@@ -26,18 +28,4 @@
 
 .bottle-count {
   color: rgb(194, 189, 189);
-}
-
-/*  */
-.button-wrap {
-  display: flex;
-  justify-content: space-between;
-}
-.example-container {
-  height: 80px;
-}
-
-.example-sidenav {
-  width: 50%;
-  display: flex;
 }

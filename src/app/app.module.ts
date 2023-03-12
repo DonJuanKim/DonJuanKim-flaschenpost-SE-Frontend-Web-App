@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GetServiceService } from './service//get-service/get-service.service';
 import { FilterServiceService } from './service/filter-service/filter-service.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductPageComponent } from './product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     BottleViewComponent,
     DetailViewComponent,
+    ProductPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -23,16 +23,16 @@
       <div class="button-wrap">
         <span> Sort by Price</span>
         <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-          <mat-button-toggle color="primary" (click)="sortByPrice(true)"
+          <mat-button-toggle class="sort-button" (click)="sortByPrice(true)"
             >Ascending</mat-button-toggle
           >
-          <mat-button-toggle (click)="sortByPrice(false)"
-            >descending</mat-button-toggle
+          <mat-button-toggle class="sort-button" (click)="sortByPrice(false)"
+            >Descending</mat-button-toggle
           >
         </mat-button-toggle-group>
       </div>
       <div class="button-wrap">
-        <span> filter Expensive Beers</span>
+        <span> Filter Expensive Beers</span>
         <mat-chip-listbox aria-label="Fish selection">
           <mat-chip-option (click)="filterExpensiveBeers()">
             {{ filtered ? 'ON' : 'OFF' }}

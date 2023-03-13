@@ -28,7 +28,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Services
 
 - get-service : To fetch data from the url `https://flapotest.blob.core.windows.net/test/ProductData.json`
-- detail-view
+- filter-service : Contains logics to sort/filter the results of products.
 
 ## Development server
 
